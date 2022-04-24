@@ -132,9 +132,8 @@ func (h *userHandler) UploadAvatar(c *gin.Context) {
 		return
 	}
 
-	// harusnya dapet dari jwt tpi ini hanya contoh
-
-	userId := 6
+	currentUser := c.MustGet("currentUser").(user.User)
+	userId := currentUser.Id
 
 	path := fmt.Sprintf("images/%d-%s", userId, file.Filename)
 
