@@ -106,7 +106,7 @@ func (s *service) GetUserById(Id int) (User, error) {
 	}
 
 	if user.Id == 0 {
-		return user, errors.New("User not found in this Id")
+		return user, errors.New("User not found in this ID")
 	}
 
 	return user, nil
